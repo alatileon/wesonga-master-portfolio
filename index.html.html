@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leon Alati Wesonga — Operations, Executive Support &amp; Project Management</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+
+<!-- Open Graph Meta Tags for LinkedIn & Upwork -->
+<meta property="og:title" content="Leon Alati Wesonga — Remote Executive Assistant & Project Manager" />
+<meta property="og:description" content="Remote-ready operations professional offering executive support, project management, and virtual assistance. Available for remote and hybrid roles." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://alatileon.github.io/wesonga-alati-portfolio-ea/" />
+<meta property="og:image" content="https://alatileon.github.io/wesonga-alati-portfolio-ea/og-image.jpg" />
+
+<style>
+  :root{
+    --bg: #0C0B09;
+    --panel: #17140F;
+    --panel-2: #1D1912;
+    --line: #2E2A21;
+    --gold: #C9A227;
+    --gold-bright: #E8C468;
+    --ink: #F3EEE2;
+    --ink-muted: #9C9483;
+    --ink-faint: #6B6455;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{ background:var(--gold); color:#0C0B09; }
+  a{ color:var(--gold-bright); }
+
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+  .display{ font-family:'Fraunces', serif; }
+
+  .wrap{ max-width:1120px; margin:0 auto; padding:0 32px; }
+
+  /* subtle ledger-rule background texture */
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 63px, rgba(201,162,39,0.045) 64px);
+    pointer-events:none;
+    z-index:0;
+  }
+
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(12,11,9,0.86);
+    backdrop-filter: blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+  }
+  .brandmark{ display:flex; align-items:baseline; gap:10px; }
+  .brandmark .initials{
+    font-family:'Fraunces', serif; font-weight:600; font-size:20px; letter-spacing:0.02em;
+    color:var(--gold-bright);
+  }
+  .brandmark .role{
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint);
+  }
+  nav.site-nav{ display:flex; gap:28px; }
+  nav.site-nav a{
+    color:var(--ink-muted); text-decoration:none; font-size:13px; letter-spacing:0.05em; text-transform:uppercase;
+    transition:color .2s ease;
+  }
+  nav.site-nav a:hover{ color:var(--gold-bright); }
+  @media (max-width:760px){ nav.site-nav{ display:none; } }
+
+  /* ---------------- HERO ---------------- */
+  section.hero{
+    position:relative; z-index:1;
+    padding:96px 0 64px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.5fr 1fr; gap:56px; align-items:start;
+  }
+  @media (max-width:900px){ .hero-grid{ grid-template-columns:1fr; } }
+
+  .eyebrow{
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold);
+    display:flex; align-items:center; gap:10px; margin-bottom:22px;
+  }
+  .eyebrow::before{
+    content:""; width:26px; height:1px; background:var(--gold);
+  }
+  h1.hero-title{
+    font-family:'Fraunces', serif; font-weight:500; font-size:clamp(34px, 4.6vw, 54px);
+    line-height:1.12; margin:0 0 22px; color:var(--ink);
+  }
+  h1.hero-title em{ font-style:italic; color:var(--gold-bright); }
+  p.hero-sub{
+    font-size:16.5px; line-height:1.7; color:var(--ink-muted); max-width:56ch; margin:0 0 30px;
+  }
+  .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 22px; font-size:13px; letter-spacing:0.04em; text-transform:uppercase;
+    text-decoration:none; border-radius:2px; font-weight:500;
+    transition:all .2s ease;
+  }
+  .btn-primary{ background:var(--gold); color:#0C0B09; }
+  .btn-primary:hover{ background:var(--gold-bright); }
+  .btn-ghost{ border:1px solid var(--line); color:var(--ink); }
+  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold-bright); }
+
+  /* Live Ops Panel — signature element */
+  .ops-panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-top:2px solid var(--gold);
+    padding:26px 26px 10px;
+  }
+  .ops-panel .ops-head{
+    display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;
+  }
+  .ops-panel .ops-head .label{
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint);
+  }
+  .ops-panel .ops-head .dot{
+    width:7px; height:7px; border-radius:50%; background:var(--gold-bright);
+    box-shadow:0 0 8px var(--gold-bright);
+    animation:pulse 2.2s infinite ease-in-out;
+  }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.35;} }
+  .ops-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:12px 0; border-bottom:1px solid var(--line);
+  }
+  .ops-row:last-child{ border-bottom:none; }
+  .ops-row .metric{ font-family:'IBM Plex Mono', monospace; font-size:24px; color:var(--gold-bright); font-weight:500; }
+  .ops-row .metric-label{ font-size:12px; color:var(--ink-muted); text-align:right; max-width:56%; line-height:1.4; }
+
+  @media (prefers-reduced-motion: reduce){
+    .ops-panel .ops-head .dot{ animation:none; }
+  }
+
+  /* ---------------- SECTION SCAFFOLD ---------------- */
+  section{ position:relative; z-index:1; padding:76px 0; border-bottom:1px solid var(--line); }
+  .section-head{ margin-bottom:44px; max-width:70ch; }
+  .section-head .kicker{
+    font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold);
+    margin-bottom:10px; display:block;
+  }
+  .section-head h2{
+    font-family:'Fraunces', serif; font-weight:500; font-size:clamp(26px,3vw,36px);
+    margin:0 0 12px; color:var(--ink);
+  }
+  .section-head p{ color:var(--ink-muted); line-height:1.7; font-size:15.5px; margin:0; }
+
+  /* ---------------- ABOUT ---------------- */
+  .about-body p{ color:var(--ink-muted); line-height:1.85; font-size:16px; margin:0 0 18px; max-width:74ch; }
+  .about-body strong{ color:var(--ink); font-weight:600; }
+
+  /* ---------------- TRACKS ---------------- */
+  .tracks-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+  @media (max-width:860px){ .tracks-grid{ grid-template-columns:1fr; } }
+  .track-card{ background:var(--panel); padding:34px 30px; }
+  .track-card .track-index{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--gold); letter-spacing:.08em; }
+  .track-card h3{ font-family:'Fraunces',serif; font-weight:500; font-size:22px; margin:14px 0 14px; color:var(--ink); }
+  .track-card ul{ margin:0; padding:0; list-style:none; }
+  .track-card li{
+    font-size:13.5px; color:var(--ink-muted); padding:8px 0; border-top:1px solid var(--line);
+    line-height:1.5;
+  }
+  .track-card li:first-child{ border-top:none; }
+  .track-card li::before{ content:"— "; color:var(--gold); }
+
+  /* ---------------- SKILLS / RADAR + MATRIX ---------------- */
+  .skills-grid{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap:56px; align-items:center; }
+  @media (max-width:900px){ .skills-grid{ grid-template-columns:1fr; } }
+  .radar-wrap{ background:var(--panel); border:1px solid var(--line); padding:24px; }
+  .radar-wrap .cap{ font-size:11px; color:var(--ink-faint); text-align:center; margin-top:10px; letter-spacing:.04em; }
+
+  table.matrix{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  table.matrix caption{ text-align:left; font-size:11px; color:var(--ink-faint); letter-spacing:.1em; text-transform:uppercase; margin-bottom:12px; }
+  table.matrix th, table.matrix td{ padding:11px 10px; border-bottom:1px solid var(--line); text-align:left; }
+  table.matrix thead th{ color:var(--gold-bright); font-weight:500; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+  table.matrix tbody th{ color:var(--ink); font-weight:400; }
+  table.matrix td{ text-align:center; color:var(--ink-muted); }
+  table.matrix td.on{ color:var(--gold-bright); font-size:15px; }
+
+  /* ---------------- TIMELINE ---------------- */
+  .timeline{ position:relative; padding-left:34px; }
+  .timeline::before{ content:""; position:absolute; left:6px; top:6px; bottom:6px; width:1px; background:var(--line); }
+  .tl-item{ position:relative; padding-bottom:44px; }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{
+    content:""; position:absolute; left:-34px; top:4px; width:11px; height:11px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--gold); z-index:2;
+  }
+  .tl-date{ font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--gold); letter-spacing:.05em; margin-bottom:6px; }
+  .tl-role{ font-family:'Fraunces',serif; font-size:19px; color:var(--ink); margin:0 0 3px; font-weight:500; }
+  .tl-org{ font-size:13.5px; color:var(--ink-faint); margin-bottom:12px; }
+  .tl-desc{ color:var(--ink-muted); font-size:14px; line-height:1.6; margin:0 0 10px; max-width:66ch; }
+  .tl-item ul{ margin:0; padding:0; list-style:none; }
+  .tl-item li{ font-size:13.5px; color:var(--ink-muted); padding:5px 0 5px 18px; position:relative; line-height:1.55; }
+  .tl-item li::before{ content:"›"; position:absolute; left:0; color:var(--gold); }
+
+  /* ---------------- PROJECTS ---------------- */
+  .proj-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  @media (max-width:900px){ .proj-grid{ grid-template-columns:1fr; } }
+  .proj-card{ background:var(--panel); border:1px solid var(--line); padding:28px; display:flex; flex-direction:column; }
+  .proj-card .proj-tag{ font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--gold); letter-spacing:.06em; margin-bottom:14px; }
+  .proj-card h3{ font-family:'Fraunces',serif; font-size:19px; font-weight:500; margin:0 0 12px; color:var(--ink); }
+  .proj-card ul{ margin:0 0 auto; padding:0; list-style:none; }
+  .proj-card li{ font-size:13px; color:var(--ink-muted); padding:6px 0; border-top:1px solid var(--line); line-height:1.5; }
+  .proj-card li:first-child{ border-top:none; }
+  .proj-skills{ margin-top:16px; padding-top:14px; border-top:1px dashed var(--line); font-size:11.5px; color:var(--ink-faint); line-height:1.6; }
+
+  /* ---------------- EDUCATION ---------------- */
+  .edu-grid{ display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+  @media (max-width:800px){ .edu-grid{ grid-template-columns:1fr; } }
+  .edu-item{ margin-bottom:22px; }
+  .edu-item h4{ font-family:'Fraunces',serif; font-size:16px; font-weight:500; margin:0 0 4px; color:var(--ink); }
+  .edu-item .edu-meta{ font-size:12.5px; color:var(--ink-faint); margin-bottom:6px; }
+  .edu-item .edu-course{ font-size:12.5px; color:var(--ink-muted); line-height:1.5; }
+  .cert-list{ list-style:none; margin:0; padding:0; }
+  .cert-list li{ font-size:14px; color:var(--ink-muted); padding:12px 0; border-top:1px solid var(--line); }
+  .cert-list li:first-child{ border-top:none; }
+  .cert-list strong{ color:var(--ink); font-weight:500; }
+
+  /* ---------------- FOOTER ---------------- */
+  footer{ padding:60px 0 40px; position:relative; z-index:1; }
+  .footer-grid{ display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:30px; }
+  footer h2{ font-family:'Fraunces',serif; font-weight:500; font-size:clamp(28px,4vw,42px); margin:0 0 16px; }
+  footer .contact-list{ display:flex; flex-direction:column; gap:8px; font-size:14px; color:var(--ink-muted); }
+  footer .contact-list a{ text-decoration:none; }
+  footer .contact-list a:hover{ color:var(--gold-bright); }
+  .footer-meta{ margin-top:50px; padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:11.5px; color:var(--ink-faint); letter-spacing:.04em; }
+
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+  /* Print Styles */
+  @media print {
+    body { background: white; }
+    .wrap { max-width: 100%; padding: 0 20px; }
+    .ops-panel .ops-head .dot { display: none; }
+    nav.site-nav { display: none; }
+    section { border-bottom: 1px solid #ccc; padding: 30px 0; }
+    .btn { display: none; }
+    header.site { position: static; background: white; border-bottom: 1px solid #ccc; }
+    .brandmark .initials { color: #000; }
+    .brandmark .role { color: #666; }
+    h1.hero-title em { color: #C9A227; }
+    .track-card { background: #f5f5f5; }
+    .proj-card { background: #f5f5f5; }
+    .radar-wrap { background: #f5f5f5; }
+    .ops-panel { background: #f5f5f5; border-top: 2px solid #C9A227; }
+    .ops-row .metric { color: #C9A227; }
+    .footer-meta { border-top: 1px solid #ccc; }
+    .footer-grid { align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="brandmark">
+      <span class="initials">L.A. Wesonga</span>
+      <span class="role">Ops &amp; Executive Support</span>
+    </div>
+    <nav class="site-nav">
+      <a href="#about">Profile</a>
+      <a href="#tracks">Tracks</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Nairobi, Kenya — Remote / Distributed-Team Ready</span>
+      <h1 class="hero-title">I turn operational chaos into systems that <em>run themselves.</em></h1>
+      <p class="hero-sub">Remote-ready operations and administrative professional working across executive support, project management, and virtual assistance — backed by a foundation in finance, procurement, and business operations. Currently completing a B.Com (Finance) at Kenyatta University while running an independent operations practice and supporting public-health field research.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="mailto:leonwesonga@gmail.com">Email Me</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/wesongaalati/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="#contact">+254 796 371 484</a>
+      </div>
+    </div>
+    <div class="ops-panel reveal">
+      <div class="ops-head">
+        <span class="label">Live Ops Ledger</span>
+        <span class="dot"></span>
+      </div>
+      <div class="ops-row"><span class="metric" data-count="50">0</span><span class="metric-label">supplier transactions &amp; purchase orders coordinated</span></div>
+      <div class="ops-row"><span class="metric" data-count="30">0</span><span class="metric-label">interconnected Monday.com boards designed</span></div>
+      <div class="ops-row"><span class="metric" data-count="150">0</span><span class="metric-label">field-research participants documented</span></div>
+      <div class="ops-row"><span class="metric" data-count="18">0</span><span class="metric-label">PMBOK-aligned project governance documents</span></div>
+      <div class="ops-row"><span class="metric" data-count="100">0</span><span class="metric-label">structured AI prompts in active use</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Executive Profile</span>
+      <h2>Built for remote, asynchronous work — because that's how I already operate.</h2>
+    </div>
+    <div class="about-body">
+      <p><strong>Founder and operator of Hale Limited</strong>, an operations venture covering supplier coordination, procurement, workflow design, and client communication — direct, hands-on experience delivering end-to-end business support the way a remote client would need it: independently, asynchronously, and with strong documentation habits.</p>
+      <p>Built a full <strong>PMBOK-aligned project delivery framework</strong> (18 documents) and an enterprise-style <strong>Monday.com workspace</strong> (30+ boards, dashboards, automations), demonstrating the planning, scheduling, reporting, and tool fluency that remote project management and executive support roles require.</p>
+      <p>Comfortable working across distributed teams and asynchronous communication, with practical fluency in Microsoft Office, Google Workspace, Monday.com, Asana, ClickUp, Notion, and AI productivity tools (ChatGPT, Claude, Gemini, Copilot) used daily to speed up documentation, scheduling, and correspondence.</p>
+    </div>
+  </div>
+</section>
+
+<section id="tracks">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Three Ways to Work With Me</span>
+      <h2>Executive support, project delivery, or full-spectrum virtual assistance.</h2>
+      <p>One operational skill set, three ways clients tend to book it.</p>
+    </div>
+    <div class="tracks-grid">
+      <div class="track-card">
+        <span class="track-index">Track 01</span>
+        <h3>Executive Assistant</h3>
+        <ul>
+          <li>Calendar &amp; inbox management</li>
+          <li>Travel coordination &amp; expense management</li>
+          <li>Meeting prep, minutes &amp; executive correspondence</li>
+          <li>Confidentiality &amp; records management</li>
+          <li>Executive dashboards &amp; KPI reporting</li>
+        </ul>
+      </div>
+      <div class="track-card">
+        <span class="track-index">Track 02</span>
+        <h3>Project Manager / Coordinator</h3>
+        <ul>
+          <li>Project charters, scope &amp; WBS</li>
+          <li>RAID logs &amp; risk management</li>
+          <li>Progress reporting &amp; change control</li>
+          <li>Stakeholder &amp; vendor coordination</li>
+          <li>Closure, handover &amp; lessons learned</li>
+        </ul>
+      </div>
+      <div class="track-card">
+        <span class="track-index">Track 03</span>
+        <h3>Virtual Assistant</h3>
+        <ul>
+          <li>Inbox, data entry &amp; research</li>
+          <li>CRM updates &amp; client onboarding</li>
+          <li>Invoicing, expense tracking &amp; bookkeeping support</li>
+          <li>Spreadsheet &amp; database management</li>
+          <li>SOP maintenance &amp; process support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Capability Map</span>
+      <h2>Where the depth actually sits.</h2>
+      <p>Self-assessed proficiency across the six areas clients ask about most, plus a recruiter-facing matrix showing which track draws on which skill set.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="radar-wrap">
+        <canvas id="skillsRadar" height="300"></canvas>
+        <div class="cap">Self-assessed proficiency, 0–10 scale</div>
+      </div>
+      <div>
+        <table class="matrix">
+          <caption>Skill relevance by role track</caption>
+          <thead>
+            <tr><th>Skill area</th><th>EA</th><th>PM</th><th>VA</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Calendar &amp; correspondence</th><td class="on">●</td><td>—</td><td class="on">●</td></tr>
+            <tr><th>Scheduling &amp; WBS / RAID</th><td>—</td><td class="on">●</td><td>—</td></tr>
+            <tr><th>Stakeholder &amp; vendor comms</th><td class="on">●</td><td class="on">●</td><td class="on">●</td></tr>
+            <tr><th>Dashboards &amp; KPI reporting</th><td class="on">●</td><td class="on">●</td><td>—</td></tr>
+            <tr><th>Procurement &amp; supplier docs</th><td>—</td><td class="on">●</td><td class="on">●</td></tr>
+            <tr><th>Accounts payable &amp; reconciliations</th><td>—</td><td>—</td><td class="on">●</td></tr>
+            <tr><th>CRM &amp; client onboarding</th><td>—</td><td>—</td><td class="on">●</td></tr>
+            <tr><th>Change &amp; risk management</th><td>—</td><td class="on">●</td><td>—</td></tr>
+            <tr><th>AI-assisted documentation</th><td class="on">●</td><td class="on">●</td><td class="on">●</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Professional Experience</span>
+      <h2>Chronological record.</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-date">2022 — Present</div>
+        <h3 class="tl-role">Founder &amp; Operations Lead</h3>
+        <div class="tl-org">Hale Limited · Nairobi, Kenya</div>
+        <p class="tl-desc">Operate an independent business-operations practice delivering procurement, supplier coordination, workflow design, documentation, and client-facing administrative support.</p>
+        <ul>
+          <li>Manage day-to-day operations and records including 15+ SOPs and process documents</li>
+          <li>Coordinate procurement across 50+ supplier transactions and purchase orders, maintaining a full supplier database</li>
+          <li>Primary point of contact across 20+ client accounts — proposals, progress updates, service agreements</li>
+          <li>Designed and documented 10+ workflow processes and checklists with process maps</li>
+          <li>Prepare quarterly business performance reports and budget-tracking documents</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">2023</div>
+        <h3 class="tl-role">Procurement &amp; Logistics Intern</h3>
+        <div class="tl-org">Ministry of Water and Sanitation · Maji House, Kenya</div>
+        <p class="tl-desc">Public-sector internship in procurement documentation, supplier communication, inventory support, and administrative coordination.</p>
+        <ul>
+          <li>Processed 35+ procurement requisitions and purchase orders; drafted 20+ supplier letters (RFQs, tenders)</li>
+          <li>Managed a supplier database of 50+ registered suppliers; supported bid-evaluation reporting</li>
+          <li>Updated inventory records weekly; supported quarterly stock-taking and verification</li>
+          <li>Coordinated delivery schedules for 15+ procurement orders and goods-receipt documentation</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">June 2025</div>
+        <h3 class="tl-role">Research Assistant — NTD Field Study</h3>
+        <div class="tl-org">Africa Institute for Health and Development · Kenya</div>
+        <p class="tl-desc">Community-based research on Neglected Tropical Diseases, collecting field data to support public-health planning and evidence-based interventions.</p>
+        <ul>
+          <li>Conducted structured household &amp; community surveys with 150+ participants, ensuring informed consent</li>
+          <li>Achieved 95% data accuracy through careful verification and quality assurance</li>
+          <li>Prepared daily field reports and maintained confidential participant records</li>
+          <li>Coordinated with a multidisciplinary team on schedules and field activities</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-date">July 2026</div>
+        <h3 class="tl-role">Research Assistant — SBCC Study</h3>
+        <div class="tl-org">Africa Institute for Health and Development · Kenya</div>
+        <p class="tl-desc">Social and Behavior Change Communication research understanding community knowledge, attitudes, and behaviors to inform health-communication strategy.</p>
+        <ul>
+          <li>Conducted community interviews and surveys gathering behavioral and social data</li>
+          <li>Coordinated participant engagement, scheduling, and informed consent</li>
+          <li>Produced structured field documentation and daily progress reports for supervisors</li>
+          <li>Verified and organized research data ahead of analysis</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Featured Projects</span>
+      <h2>Systems built on my own initiative.</h2>
+      <p>Independent work demonstrating the same planning, tooling, and documentation discipline I bring to client engagements.</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <span class="proj-tag">2024 — Present</span>
+        <h3>Project Delivery Framework (LPDF)</h3>
+        <ul>
+          <li>18 documents: charter, business case, scope, WBS (120+ work packages), risk register (25+ risks), RAID log</li>
+          <li>15+ reusable templates and SOPs for project governance and reporting</li>
+        </ul>
+        <div class="proj-skills">PMBOK · Risk Management · Governance · Reporting</div>
+      </div>
+      <div class="proj-card">
+        <span class="proj-tag">2025 — Present</span>
+        <h3>Monday.com Workspace Development</h3>
+        <ul>
+          <li>30+ interconnected boards across portfolio, execution, resourcing &amp; documentation</li>
+          <li>8+ executive dashboards; 15+ automations for task assignment and status updates</li>
+          <li>Portfolio-level dashboard giving executive visibility across 5+ concurrent projects</li>
+        </ul>
+        <div class="proj-skills">Workflow Automation · Dashboard Design · Portfolio Management</div>
+      </div>
+      <div class="proj-card">
+        <span class="proj-tag">2026 — Present</span>
+        <h3>AI Productivity Integration</h3>
+        <ul>
+          <li>100+ structured prompts across planning, correspondence, research &amp; reporting</li>
+          <li>10+ repeatable AI-assisted workflows with a human review step for accuracy</li>
+        </ul>
+        <div class="proj-skills">Prompt Engineering · Process Optimization · Documentation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Education &amp; Certifications</span>
+      <h2>Foundations.</h2>
+    </div>
+    <div class="edu-grid">
+      <div>
+        <div class="edu-item">
+          <h4>Bachelor of Commerce (Finance)</h4>
+          <div class="edu-meta">Kenyatta University, Nairobi, Kenya — Expected 2026</div>
+          <div class="edu-course">Financial Management · Business Administration · Accounting · Economics · Operations Management · Strategic Management · Research Methods</div>
+        </div>
+        <div class="edu-item">
+          <h4>Diploma in Purchasing and Supplies Management</h4>
+          <div class="edu-meta">Kenya — 2022</div>
+          <div class="edu-course">Procurement Principles · Supply Chain Management · Logistics · Inventory Management · Contract Law</div>
+        </div>
+      </div>
+      <ul class="cert-list">
+        <li><strong>AI Career Essentials</strong> — ALX<br>AI tools, prompt engineering, workflow optimization</li>
+        <li><strong>ALX Virtual Assistant</strong> — ALX<br>Remote operations, calendar &amp; client management, virtual collaboration tools</li>
+        <li><strong>Cornerstone MEAL</strong><br>Monitoring, Evaluation, Accountability, and Learning</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h2>Let's build the<br>next system.</h2>
+        <a class="btn btn-primary" href="mailto:leonwesonga@gmail.com">leonwesonga@gmail.com</a>
+      </div>
+      <div class="contact-list">
+        <a href="https://www.linkedin.com/in/wesongaalati/" target="_blank" rel="noopener">linkedin.com/in/wesongaalati</a>
+        <span>+254 796 371 484</span>
+        <span>Nairobi, Kenya — Remote / Distributed-Team Ready</span>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span>Leon Alati Wesonga — Executive Support · Project Management · Virtual Assistance</span>
+      <span>References available on request</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Count-up animation for the Live Ops Ledger
+  const counters = document.querySelectorAll('.metric[data-count]');
+  const animateCounter = (el) => {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const duration = 1400;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + (progress === 1 ? '+' : '');
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const opsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(animateCounter);
+        entry.target.classList.add('in');
+        opsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  const opsPanel = document.querySelector('.ops-panel');
+  if (opsPanel) opsObserver.observe(opsPanel);
+
+  // Generic reveal-on-scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('in');
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Skills radar chart
+  const ctx = document.getElementById('skillsRadar');
+  if (ctx && window.Chart) {
+    new Chart(ctx, {
+      type: 'radar',
+      data: {
+        labels: ['Executive Support', 'Project Management', 'Remote Operations', 'Procurement & Ops', 'Finance & Accounting', 'AI Productivity'],
+        datasets: [{
+          label: 'Proficiency',
+          data: [9, 8.5, 9, 8, 7.5, 9.5],
+          backgroundColor: 'rgba(201,162,39,0.18)',
+          borderColor: '#C9A227',
+          borderWidth: 2,
+          pointBackgroundColor: '#E8C468',
+          pointBorderColor: '#0C0B09',
+          pointRadius: 4,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          r: {
+            min: 0, max: 10,
+            angleLines: { color: '#2E2A21' },
+            grid: { color: '#2E2A21' },
+            pointLabels: { color: '#9C9483', font: { family: 'IBM Plex Sans', size: 11 } },
+            ticks: { display: false, stepSize: 2 }
+          }
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>
